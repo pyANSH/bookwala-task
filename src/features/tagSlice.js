@@ -22,6 +22,9 @@ const tagSlice = createSlice({
         addTag: (state, action) => {
             state.tags.push(action.payload)
 
+            if (state.tagMenuA.find((tag) => tag.name === action.payload.name) === undefined) {
+                state.tagMenuA.push(action.payload)
+            }
             state.tagSize += 1
         },
         removeTag: (state, action) => {
