@@ -2,9 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     tags: [
-        { id: 1, name: "Purple", color: "#800080" },
-        { id: 2, name: "Blue", color: "#0000FF" },
-        { id: 3, name: "Green", color: "#008000" },
+
+    ],
+    tagMenuA: [
+        { id: 1, name: "tag1", color: "#E2F9CF" },
+        { id: 2, name: "tag2", color: "#F0F8FF" },
+        { id: 3, name: "tag3", color: "#FFF68F" },
+        { id: 4, name: "tag4", color: "#FFB6C1" },
     ],
     tagSize: 3,
     tagMenu: false,
@@ -17,6 +21,7 @@ const tagSlice = createSlice({
     reducers: {
         addTag: (state, action) => {
             state.tags.push(action.payload)
+
             state.tagSize += 1
         },
         removeTag: (state, action) => {
