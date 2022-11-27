@@ -27,7 +27,12 @@ function App() {
                 }} />
               </p>
             )}
-            <input type="text" className='input' placeholder="add new Tags" value={newTag} onChange={(e) => { setNewTag(e.target.value) }} />
+            <input type="text" className='input' placeholder="add new Tags" value={newTag} onChange={(e) => { setNewTag(e.target.value) }} onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                dispatch(addTag({ id: tagSize + 1, name: newTag, color: i }))
+                setNewTag('')
+              }
+            }} />
           </div>
           <div className="btn_container">
             {
